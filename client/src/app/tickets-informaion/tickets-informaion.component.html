@@ -1,0 +1,22 @@
+<h2>תאריך: {{currentDate | date:'yyyy-MM-dd'}} | כרטיסים שנותרו: {{totalTickets}} </h2>
+
+<mat-button-toggle-group [(ngModel)]="time" name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle value="evening">אחה"צ</mat-button-toggle>
+    <mat-button-toggle value="noon">צהריים</mat-button-toggle>
+    <mat-button-toggle value="morning">בוקר</mat-button-toggle>
+</mat-button-toggle-group>
+<div class="table" *ngIf="time=='morning'">
+    <div class="row" *ngFor="let item of morningEntrances">
+        <app-tickets-of-time [timeData]="item" [numOfTickets]="numOfTickets" [entrances]="entrances" (entrancesChanged)="entrancesChanged($event)"></app-tickets-of-time>
+    </div>
+</div>
+<div class="table" *ngIf="time=='noon'">
+    <div class="row" *ngFor="let item of noonEntrances">
+        <app-tickets-of-time [timeData]="item" [numOfTickets]="numOfTickets" [entrances]="entrances" (entrancesChanged)="entrancesChanged($event)"></app-tickets-of-time>
+    </div>
+</div>
+<div class="table" *ngIf="time=='evening'">
+    <div class="row" *ngFor="let item of eveningEntrances">
+        <app-tickets-of-time [timeData]="item" [numOfTickets]="numOfTickets" [entrances]="entrances" (entrancesChanged)="entrancesChanged($event)"></app-tickets-of-time>
+    </div>
+</div>

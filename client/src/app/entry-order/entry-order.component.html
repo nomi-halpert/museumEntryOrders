@@ -1,0 +1,15 @@
+<div class="entry">
+    <!-- <mat-icon class="home" aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon> -->
+    <img src="../assets/logo.jpg">
+    <h1> כניסה למוזיאון</h1>
+    <h3>נא למלא את הפרטים הדרושים ולחץ להמשך</h3>
+    <span>הכניסה למוזיאון אינה כרוכה בתשלום</span>
+    <h2> פרטי סיור</h2>
+    <mat-form-field class="example-form-field">
+        <mat-label>מספר מבקרים</mat-label>
+        <input matInput type="number" (keyup.enter)="getEntrances()" [(ngModel)]="numOfTickets">
+    </mat-form-field>
+    <br>
+    <app-tickets-informaion *ngIf="display" [numOfTickets]="numOfTickets" [entrances]="entrances">
+    </app-tickets-informaion>
+</div>

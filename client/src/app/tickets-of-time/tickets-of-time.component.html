@@ -1,0 +1,13 @@
+<span class="time-data">
+    <button mat-raised-button class="raised-button" (click)="ticketsPurchase()"
+        [disabled]="timeData.isClosed || timeData.availablePlaces-numOfTickets<0 || timeData.availablePlaces==0">
+        <h2>{{timeData.startTime}}</h2>
+        <h5 *ngIf="timeData.isClosed; else elseBlock">סגור</h5>
+        <ng-template #elseBlock>
+            <h4 *ngIf="(timeData.availablePlaces==0); else elseBlock">הכרטיסים אזלו</h4>
+            <ng-template #elseBlock>מספר כרטיסים:
+           {{timeData.availablePlaces}} 
+        </ng-template>
+        </ng-template>
+    </button>
+</span>

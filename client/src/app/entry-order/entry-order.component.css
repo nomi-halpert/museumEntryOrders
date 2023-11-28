@@ -1,0 +1,13 @@
+.entry{
+    text-align: center;
+    height:500%;
+    background-color:rgb(28, 215, 215);
+    border-style:groove;
+    border-color: black;
+    border-width: 8px;
+}
+/* .home{
+    margin-left: 95%;
+    margin-top: 1%;
+    align-self: start;
+} */

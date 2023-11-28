@@ -1,0 +1,12 @@
+.time-data {
+   display:flex;
+   flex-direction: row;
+}
+.raised-button{
+  font-size: 14px;
+  margin-left: 8px;
+  width: 150px;
+  height: 100px;
+  align-items:center;
+  border-radius: 30%;
+}
