@@ -14,7 +14,7 @@ export class TicketsAvailabilityService {
   entrances: TicketsAvailability[] = []
   
   getEntrances(): Observable<TicketsAvailability[]> {
-    let url: string = 'https://localhost:7155/api/Entrances';
+    let url: string = 'https://localhost:7099/api/Entrances';
     return (this.http.get<TicketsAvailability[]>(url)).pipe(map((res: TicketsAvailability[]) => {
       this.entrances = res;
       return res;
@@ -22,7 +22,7 @@ export class TicketsAvailabilityService {
   }
 
   ticketPurchase(numOfTickets:number,index:number):Observable<TicketsAvailability[]>{
-    let url: string = `https://localhost:7155/api/Entrances/${index}`;
+    let url: string = `https://localhost:7099/api/Entrances/${index}`;
     return (this.http.put<TicketsAvailability[]>(url,numOfTickets)).pipe(map((res: TicketsAvailability[]) => {
       this.entrances = res;
       return res;
