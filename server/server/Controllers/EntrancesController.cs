@@ -12,14 +12,15 @@ namespace server.Controllers
     [ApiController]
     public class EntrancesController : Controller
     {
-        public IConfiguration _configuration { get; set; }
-        public string Path { get; set; }
         public EntrancesController(IConfiguration configuration)
         {
             _configuration = configuration;
             Path = _configuration.GetSection("Path").GetSection("JsonPath").Value;
         }
+        public IConfiguration _configuration { get; set; }
         public TicketsAvailability[] TicketsAvailability { get; set; }
+        public string Path { get; set; }
+        
         [HttpGet]
         public ActionResult<TicketsAvailability[]> GetTicketsAvailability()
         {
